@@ -1,17 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { ClarityModule } from '@clr/angular';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
 
-import { AppComponent } from './app.component';
-
+import { SiteModule } from "./site/site.module";
+import { LoginModule } from "./login/login.module";
+import { rootRouterConfig } from "./app.routes";
+import { AppComponent } from "./app.component";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
+    LoginModule,
+    SiteModule,
     BrowserModule,
-    ClarityModule
+    RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
