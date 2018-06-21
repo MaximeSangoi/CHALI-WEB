@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
+import { ClarityModule } from "@clr/angular";
 
 import { SiteComponent } from "./site.component";
 
@@ -8,7 +9,7 @@ import { SiteComponent } from "./site.component";
   declarations: [
     SiteComponent
   ],
-  imports: [RouterModule],
+  imports: [RouterModule, ClarityModule],
   providers: []
 })
 export class SiteModule { }

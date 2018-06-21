@@ -1,1 +1,31 @@
-Hello there ! go to <a routerLink="/login">login</a>
+<div class="main-container">
+    <!-- <div class="alert alert-app-level"></div> -->
+    <header class="header header-5">
+        <div class="branding">
+            <a class="nav-link nav-text" routerLink="/">
+                <clr-icon shape="heart"></clr-icon>
+                <span class="title">Chats Libres Toulouse</span>
+            </a>
+        </div>
+        <div class="header-nav">
+            <a class="nav-link nav-text">Chats en attente d'adoption</a>
+        </div>
+        <div class="search">
+            <form class="search">
+                <label for="search_input">
+                    <input id="search_input" placeholder="Rechercher un chat..." type="text">
+                </label>
+            </form>
+        </div>
+        <div class="header-actions header-actions--overflow">
+            <a routerLink="/login" class="nav-link nav-icon">
+                <clr-icon shape="cog"></clr-icon>
+            </a>
+        </div>
+    </header>
+    <div class="content-container">
+        <div class="content-area">
+            Bienvenue à Chats Libres !
+        </div>
+    </div>
+</div>
