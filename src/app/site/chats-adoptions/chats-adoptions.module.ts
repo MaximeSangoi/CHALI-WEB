@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ChatsAdoptionsComponent } from './chats-adoptions.component';
+import { ChatsAdoptionsRoutingModule } from './chats-adoptions.routes';
+import { ChatsAdoptionsListeComponent } from './liste/chats-adoptions-liste.component';
+import { ChatsAdoptionsDetailComponent } from './detail/chats-adoptions-detail.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    ChatsAdoptionsRoutingModule
   ],
-  declarations: [ChatsAdoptionsComponent]
+  declarations: [
+    ChatsAdoptionsListeComponent,
+    ChatsAdoptionsDetailComponent
+  ]
 })
 export class ChatsAdoptionsModule { }
