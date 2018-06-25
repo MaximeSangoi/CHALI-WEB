@@ -2,16 +2,16 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
-import { SiteModule } from "./site/site.module";
-import { LoginModule } from "./login/login.module";
 import { rootRouterConfig } from "./app.routes";
 import { AppComponent } from "./app.component";
+import { NotFoundComponent } from "./shared/components/not-found.component";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    NotFoundComponent
+  ],
   imports: [
-    LoginModule,
-    SiteModule,
     BrowserModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
