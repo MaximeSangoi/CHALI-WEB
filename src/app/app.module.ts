@@ -13,8 +13,9 @@ import { NotFoundComponent } from "./shared/components/not-found.component";
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(rootRouterConfig, { useHash: true })
+    RouterModule.forRoot(rootRouterConfig)
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

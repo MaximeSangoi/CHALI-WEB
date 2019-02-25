@@ -1,16 +1,16 @@
 import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 import { ClarityModule } from "@clr/angular";
 
 import { SiteComponent } from "./site.component";
-import { ChatsAdoptionsModule } from "./chats-adoptions/chats-adoptions.module";
 
+const siteRouterConfig: Routes = [
+  { path: "", component: SiteComponent }
+];
 
 @NgModule({
-  declarations: [
-    SiteComponent
-  ],
-  imports: [RouterModule, ClarityModule, ChatsAdoptionsModule],
+  declarations: [SiteComponent],
+  imports: [RouterModule.forChild(siteRouterConfig), ClarityModule],
   providers: []
 })
 export class SiteModule { }

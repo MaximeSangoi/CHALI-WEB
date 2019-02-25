@@ -4,5 +4,6 @@ import { Component } from "@angular/core";
   selector: "chats-adoptions",
   template: "<router-outlet></router-outlet>"
 })
+
 export class ChatsAdoptionsComponent {
 }
