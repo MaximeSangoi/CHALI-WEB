@@ -5,7 +5,13 @@ import { ClarityModule } from "@clr/angular";
 import { SiteComponent } from "./site.component";
 
 const siteRouterConfig: Routes = [
-  { path: "", component: SiteComponent }
+  { 
+    path: "", 
+    component: SiteComponent,
+    children: [
+      { path: "", loadChildren: "./chats-adoptions/chats-adoptions.module#ChatsAdoptionsModule" }
+    ]
+  }
 ];
 
 @NgModule({

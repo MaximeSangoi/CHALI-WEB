@@ -1,23 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ChatsAdoptionsComponent } from './chats-adoptions.component';
+
 import { ChatsAdoptionsListeComponent } from './liste/chats-adoptions-liste.component';
 import { ChatsAdoptionsDetailComponent } from './detail/chats-adoptions-detail.component';
+import { ChatsAdoptionsComponent } from './chats-adoptions.component';
 
 const chatAdoptionsRoute: Routes = [
-  { path: 'chats-a-adopter', component: ChatsAdoptionsComponent },
-  { path: 'chats-a-adopter/liste', component: ChatsAdoptionsListeComponent },
-  { path: 'chats-a-adopter/detail/:id', component: ChatsAdoptionsDetailComponent }
+  { 
+    path: "cats-to-adopt", 
+    component: ChatsAdoptionsComponent,
+    children: [
+      { path: "", redirectTo: "list" },
+      { path: "list", component: ChatsAdoptionsListeComponent },
+      { path: "detail/:id", component: ChatsAdoptionsDetailComponent },
+    ]
+  }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(chatAdoptionsRoute)
-  ],
   declarations: [
     ChatsAdoptionsComponent,
     ChatsAdoptionsListeComponent,
     ChatsAdoptionsDetailComponent
+  ],
+  imports: [
+    RouterModule.forChild(chatAdoptionsRoute)
   ]
 })
 export class ChatsAdoptionsModule { }
