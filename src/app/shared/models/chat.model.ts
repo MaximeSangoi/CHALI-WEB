@@ -1,4 +1,5 @@
 export class Chat {
+    id: string;
     nom: string;
     dateNaissance: Date;
     dateNaissanceConnue: boolean;
@@ -8,14 +9,16 @@ export class Chat {
     tatouage: string;
     puce: boolean;
 
-    constructor(nom:string, 
-                dateNaissance:Date, 
-                dateNaissanceConnue:boolean, 
-                couleurPoil:string,
-                fiv:boolean,
-                sterilise:boolean,
-                tatouage:string,
-                puce:boolean) {
+    constructor(id: string,
+        nom: string,
+        dateNaissance: Date,
+        dateNaissanceConnue: boolean,
+        couleurPoil: string,
+        fiv: boolean,
+        sterilise: boolean,
+        tatouage: string,
+        puce: boolean) {
+        this.id = id;
         this.nom = nom;
         this.dateNaissance = dateNaissance;
         this.dateNaissanceConnue = dateNaissanceConnue;

@@ -8,13 +8,12 @@ import { ChatsAdoptionsDetailComponent } from './detail/chats-adoptions-detail.c
 import { ChatsAdoptionsComponent } from './chats-adoptions.component';
 
 const chatAdoptionsRoute: Routes = [
-  { 
-    path: "cats-to-adopt", 
+  {
+    path: "",
     component: ChatsAdoptionsComponent,
     children: [
-      { path: "", redirectTo: "list" },
-      { path: "list", component: ChatsAdoptionsListeComponent },
-      { path: "detail/:id", component: ChatsAdoptionsDetailComponent },
+      { path: "detail/:toto", component: ChatsAdoptionsDetailComponent },
+      { path: "", component: ChatsAdoptionsListeComponent },
     ]
   }
 ];

@@ -3,13 +3,12 @@
     <header class="header header-5">
         <div class="branding">
             <a class="nav-link nav-text" routerLink="/">
-                <clr-icon shape="heart"></clr-icon>
                 <span class="title">Chats Libres Toulouse</span>
             </a>
         </div>
-        <div class="header-nav">
+        <!-- <div class="header-nav">
             <a class="nav-link nav-text">Chats en attente d'adoption</a>
-        </div>
+        </div> -->
         <div class="search">
             <form class="search">
                 <label for="search_input">
@@ -23,6 +22,25 @@
             </a>
         </div>
     </header>
+    <nav class="subnav">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="home" routerLinkActive="active">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="chats-adoptions" routerLinkActive="active">Chats à adopter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Prochaines expositions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Des nouvelles des adoptés !</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Nous contacter</a>
+            </li>
+        </ul>
+    </nav>
     <div class="content-container">
         <div class="content-area">
             <router-outlet></router-outlet>

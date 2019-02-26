@@ -4,21 +4,24 @@ import { RouterModule, Routes } from "@angular/router";
 import { ClarityModule } from "@clr/angular";
 
 import { SiteComponent } from "./site.component";
+import { AccueilComponent } from "./accueil/accueil.component";
 
 const siteRouterConfig: Routes = [
-  { 
-    path: "", 
+  {
+    path: "",
     component: SiteComponent,
     children: [
-      { path: "", loadChildren: "./chats-adoptions/chats-adoptions.module#ChatsAdoptionsModule" }
+      { path: "home", component: AccueilComponent },
+      { path: "chats-adoptions", loadChildren: "./chats-adoptions/chats-adoptions.module#ChatsAdoptionsModule" },
+      { path: "", redirectTo: "home" }
     ]
   }
 ];
 
 @NgModule({
-  declarations: [SiteComponent],
+  declarations: [SiteComponent, AccueilComponent],
   imports: [
-    RouterModule.forChild(siteRouterConfig), 
+    RouterModule.forChild(siteRouterConfig),
     ClarityModule,
     CommonModule
   ],

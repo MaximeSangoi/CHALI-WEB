@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: "chats-adoptions-detail",
@@ -6,4 +7,7 @@ import { Component } from "@angular/core";
   styleUrls: ["./chats-adoptions-detail.component.css"]
 })
 export class ChatsAdoptionsDetailComponent {
+  constructor(private route: ActivatedRoute) {
+
+  }
 }

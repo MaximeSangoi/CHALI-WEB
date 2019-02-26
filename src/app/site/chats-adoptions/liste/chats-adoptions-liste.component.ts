@@ -8,8 +8,8 @@ import { Chat } from "../../../shared/models/chat.model";
 })
 export class ChatsAdoptionsListeComponent {
 
-  chatsAdoptions:Chat[] = [
-    new Chat("Killy", new Date("1/1/2010"), false, "noir", false, true, "", true),
-    new Chat("Winston", new Date("1/1/2015"), false, "tabby roux", true, true, "186", false)
-  ]
+  chatsAdoptions: Chat[] = [
+    new Chat("1", "Killy", new Date("1/1/2010"), false, "noir", false, true, "", true),
+    new Chat("2", "Winston", new Date("1/1/2015"), false, "tabby roux", true, true, "186", false)
+  ];
 }

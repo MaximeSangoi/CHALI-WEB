@@ -1,21 +1,24 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th>Nom</th>
-            <th>Couleur</th>
-            <th>Puce</th>
-            <th>Tatouage</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let chat of chatsAdoptions">
-            <td>{{chat.nom}}</td>
-            <td>{{chat.couleurPoil}}</td>
-            <td>
-                <span *ngIf="chat.puce"><clr-icon shape="check"></clr-icon></span>
-                <span *ngIf="!chat.puce"><clr-icon shape="times"></clr-icon></span> 
-            </td>
-            <td>{{chat.tatouage === "" ? "Non" : chat.tatouage}}</td>
-        </tr>
-    </tbody>
-</table>
+<button type="button" class="btn btn-icon btn-primary">
+    <clr-icon shape="plus"></clr-icon> Ajouter un chat
+</button>
+<clr-datagrid class="table">
+    <clr-dg-column>Nom</clr-dg-column>
+    <clr-dg-column>Couleur</clr-dg-column>
+    <clr-dg-column>Puce</clr-dg-column>
+    <clr-dg-column>Tatouage</clr-dg-column>
+    <clr-dg-column>Stérilisation</clr-dg-column>
+
+    <clr-dg-row *ngFor="let chat of chatsAdoptions" [routerLink]="['detail/', chat.id]">
+        <clr-dg-cell>{{chat.nom}}</clr-dg-cell>
+        <clr-dg-cell>{{chat.couleurPoil}}</clr-dg-cell>
+        <clr-dg-cell>
+            <clr-icon *ngIf="chat.puce" shape="check"></clr-icon>
+            <clr-icon *ngIf="!chat.puce" shape="times"></clr-icon>
+        </clr-dg-cell>
+        <clr-dg-cell>{{chat.tatouage === "" ? "Non" : chat.tatouage}}</clr-dg-cell>
+        <clr-dg-cell>
+            <clr-icon *ngIf="chat.sterilise" shape="check"></clr-icon>
+            <clr-icon *ngIf="!chat.sterilise" shape="times"></clr-icon>
+        </clr-dg-cell>
+    </clr-dg-row>
+</clr-datagrid>
