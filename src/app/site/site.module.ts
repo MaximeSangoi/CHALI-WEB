@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
 import { ClarityModule } from "@clr/angular";
 
@@ -16,7 +17,11 @@ const siteRouterConfig: Routes = [
 
 @NgModule({
   declarations: [SiteComponent],
-  imports: [RouterModule.forChild(siteRouterConfig), ClarityModule],
+  imports: [
+    RouterModule.forChild(siteRouterConfig), 
+    ClarityModule,
+    CommonModule
+  ],
   providers: []
 })
 export class SiteModule { }

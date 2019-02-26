@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ClarityModule } from "@clr/angular";
+import { CommonModule } from '@angular/common';
 
 import { ChatsAdoptionsListeComponent } from './liste/chats-adoptions-liste.component';
 import { ChatsAdoptionsDetailComponent } from './detail/chats-adoptions-detail.component';
@@ -24,7 +26,9 @@ const chatAdoptionsRoute: Routes = [
     ChatsAdoptionsDetailComponent
   ],
   imports: [
-    RouterModule.forChild(chatAdoptionsRoute)
+    RouterModule.forChild(chatAdoptionsRoute),
+    ClarityModule,
+    CommonModule
   ]
 })
 export class ChatsAdoptionsModule { }

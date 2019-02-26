@@ -1,1 +1,21 @@
-chats-adoptions-liste works
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Couleur</th>
+            <th>Puce</th>
+            <th>Tatouage</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let chat of chatsAdoptions">
+            <td>{{chat.nom}}</td>
+            <td>{{chat.couleurPoil}}</td>
+            <td>
+                <span *ngIf="chat.puce"><clr-icon shape="check"></clr-icon></span>
+                <span *ngIf="!chat.puce"><clr-icon shape="times"></clr-icon></span> 
+            </td>
+            <td>{{chat.tatouage === "" ? "Non" : chat.tatouage}}</td>
+        </tr>
+    </tbody>
+</table>
