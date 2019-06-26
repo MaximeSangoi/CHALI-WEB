@@ -22,3 +22,38 @@
         </clr-dg-cell>
     </clr-dg-row>
 </clr-datagrid>
+
+<!-- <clr-wizard #wizardmd [(clrWizardOpen)]="newChat" clrWizardSize="md">
+    <clr-wizard-title>Nouveau chat !</clr-wizard-title>
+
+    <clr-wizard-button [type]="'cancel'">Annuler</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Précédent</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Suivant</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'">Créer chat</clr-wizard-button>
+
+    <clr-wizard-page [clrWizardPageNextDisabled]="name.pristine || !formPageOne.valid">
+        <ng-template clrPageTitle>Identité</ng-template>
+        <form clrForm #formPageOne="ngForm">
+            <clr-input-container>
+                <label>Nom</label>
+                <input clrInput required [(ngModel)]="chat.nom" name="name" #name="ngModel" />
+                <clr-control-error>This field is required!</clr-control-error>
+            </clr-input-container>
+
+            <clr-input-container>
+                <label>Favorite food</label>
+                <input clrInput [(ngModel)]="model.favorite" name="favorite" />
+            </clr-input-container>
+        </form>
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Santé</ng-template>
+        ...
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Contexte</ng-template>
+        ...
+    </clr-wizard-page>
+</clr-wizard> -->
