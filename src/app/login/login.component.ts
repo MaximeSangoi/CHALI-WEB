@@ -22,7 +22,7 @@ export class LoginComponent {
 
   onSubmit() {
     this.loginLoading = ClrLoadingState.LOADING;
-    this.loginService.login().subscribe({
+    this.loginService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe({
       next: this.successfullLogin.bind(this),
       error(msg) { console.log('Error Getting Location: ', msg); }
     });

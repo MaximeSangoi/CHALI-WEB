@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
-import { tap } from 'rxjs/operators';
+import { delay, tap } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root',
@@ -21,7 +21,8 @@ export class LoginService {
         })
 
         return of(true).pipe(
-            tap(login.subscribe()),
+            //tap(login.subscribe()),
+            delay(1000),
             tap(val => this.isLoggedIn = true)
         );
     }
