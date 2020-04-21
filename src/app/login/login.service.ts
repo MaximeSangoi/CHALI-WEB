@@ -1,33 +1,30 @@
-import { Injectable } from '@angular/core';
-
-import { Observable, of } from 'rxjs';
-import { ajax } from 'rxjs/ajax';
-import { delay, tap } from 'rxjs/operators';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { tap } from "rxjs/operators";
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: "root",
 })
 export class LoginService {
-    isLoggedIn = false;
+  constructor(private http: HttpClient) {}
 
-    // store the URL so we can redirect after logging in
-    redirectUrl: string;
+  isLoggedIn = false;
+  redirectUrl: string;
 
-    login(username: string, password: string): Observable<boolean> {
-        const login = ajax({
-            url: 'https://localhost:3000/auth/login',
-            method: 'POST',
-            body: { username, password }
+  login(username: string, password: string) {
+    return this.http
+      .post("http://localhost:3000/auth/login", {
+        username,
+        password,
+      })
+      .pipe(
+        tap(() => {
+          this.isLoggedIn = true;
         })
+      );
+  }
 
-        return of(true).pipe(
-            //tap(login.subscribe()),
-            delay(1000),
-            tap(val => this.isLoggedIn = true)
-        );
-    }
-
-    logout(): void {
-        this.isLoggedIn = false;
-    }
+  logout(): void {
+    this.isLoggedIn = false;
+  }
 }
