@@ -6,7 +6,11 @@ import { tap } from "rxjs/operators";
   providedIn: "root",
 })
 export class LoginService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    if (localStorage.getItem("tokenID")) {
+      this.isLoggedIn = true;
+    }
+  }
 
   isLoggedIn = false;
   redirectUrl: string;

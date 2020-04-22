@@ -29,16 +29,16 @@ export class LoginComponent {
   onSubmit() {
     this.loginLoading = ClrLoadingState.LOADING;
     this.error = null;
-    this.loginLoading = ClrLoadingState.DEFAULT;
-    this.loginLoading = ClrLoadingState.DEFAULT;
     this.loginService
       .login(this.loginForm.value.username, this.loginForm.value.password)
       .subscribe(
         (response: any) => {
+          this.loginLoading = ClrLoadingState.DEFAULT;
           localStorage.setItem("tokenID", response.access_token);
           this.router.navigate(["site"]);
         },
         (error: any) => {
+          this.loginLoading = ClrLoadingState.DEFAULT;
           this.error = error.message;
         }
       );

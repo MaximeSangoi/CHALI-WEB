@@ -8,21 +8,27 @@
   <clr-dg-column>Tatouage</clr-dg-column>
   <clr-dg-column>Stérilisation</clr-dg-column>
 
-  <clr-dg-row *ngFor="let chat of chats" [routerLink]="['detail/', chat.id]">
+  <clr-dg-row *ngFor="let chat of chats">
     <clr-dg-cell>{{ chat.nom }}</clr-dg-cell>
     <clr-dg-cell>{{ chat.couleurPoil }}</clr-dg-cell>
     <clr-dg-cell>
-      <clr-icon *ngIf="chat.puce" shape="check"></clr-icon>
+      <clr-icon *ngIf="chat.puce" shape="check" class="is-success"></clr-icon>
       <clr-icon *ngIf="!chat.puce" shape="times"></clr-icon>
     </clr-dg-cell>
-    <clr-dg-cell>{{
-      chat.tatouage === "" ? "Non" : chat.tatouage
-    }}</clr-dg-cell>
+    <clr-dg-cell>{{ chat.tatouage === "" ? "-" : chat.tatouage }}</clr-dg-cell>
     <clr-dg-cell>
-      <clr-icon *ngIf="chat.sterilise" shape="check"></clr-icon>
+      <clr-icon
+        *ngIf="chat.sterilise"
+        shape="check"
+        class="is-success"
+      ></clr-icon>
       <clr-icon *ngIf="!chat.sterilise" shape="times"></clr-icon>
     </clr-dg-cell>
   </clr-dg-row>
+
+  <clr-dg-detail *clrIfDetail="let detail">
+    <clr-dg-detail-header>{{ detail.name }}</clr-dg-detail-header>
+  </clr-dg-detail>
 </clr-datagrid>
 
 <!-- <clr-wizard #wizardmd [(clrWizardOpen)]="newChat" clrWizardSize="md">
