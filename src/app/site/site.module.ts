@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { CommonModule } from '@angular/common';
+import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 import { ClarityModule } from "@clr/angular";
 
@@ -12,10 +12,10 @@ const siteRouterConfig: Routes = [
     component: SiteComponent,
     children: [
       { path: "home", component: AccueilComponent },
-      { path: "chats-adoptions", loadChildren: "./chats-adoptions/chats-adoptions.module#ChatsAdoptionsModule" },
-      { path: "", redirectTo: "home" }
-    ]
-  }
+      { path: "chats", loadChildren: "./chats/chats.module#ChatsModule" },
+      { path: "", redirectTo: "home" },
+    ],
+  },
 ];
 
 @NgModule({
@@ -23,8 +23,8 @@ const siteRouterConfig: Routes = [
   imports: [
     RouterModule.forChild(siteRouterConfig),
     ClarityModule,
-    CommonModule
+    CommonModule,
   ],
-  providers: []
+  providers: [],
 })
-export class SiteModule { }
+export class SiteModule {}
