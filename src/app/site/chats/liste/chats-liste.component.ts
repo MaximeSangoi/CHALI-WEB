@@ -1,5 +1,7 @@
-import { Component } from "@angular/core";
-import { Chat } from "../../../shared/models/chat.model";
+import { Component, ViewChild } from "@angular/core";
+import { ClrWizard } from "@clr/angular";
+import { Chat } from "../chats.model";
+import { ChatsService } from "../chats.service";
 
 @Component({
   selector: "chats-liste",
@@ -7,28 +9,22 @@ import { Chat } from "../../../shared/models/chat.model";
   styleUrls: ["./chats-liste.component.css"],
 })
 export class ChatsListeComponent {
-  chats: Chat[] = [
-    new Chat(
-      "1",
-      "Killy",
-      new Date("1/1/2010"),
-      false,
-      "noir",
-      false,
-      true,
-      "",
-      true
-    ),
-    new Chat(
-      "2",
-      "Winston",
-      new Date("1/1/2015"),
-      false,
-      "tabby roux",
-      true,
-      true,
-      "186",
-      false
-    ),
-  ];
+  constructor(private chatsService: ChatsService) {}
+
+  @ViewChild("wizardlg") wizardLarge: ClrWizard;
+
+  chats: Chat[];
+  lgOpen: boolean = false;
+
+  ngOnInit() {
+    this.getCats();
+  }
+
+  showCreateWizard() {
+    this.lgOpen = true;
+  }
+
+  getCats() {
+    this.chatsService.getAll().subscribe((chats) => (this.chats = chats));
+  }
 }
