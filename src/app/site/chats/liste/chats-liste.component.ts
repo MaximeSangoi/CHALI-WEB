@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { ClrWizard } from "@clr/angular";
+import { ClrWizard, ClrWizardPage } from "@clr/angular";
 import { Chat } from "../chats.model";
 import { ChatsService } from "../chats.service";
 
@@ -11,17 +11,22 @@ import { ChatsService } from "../chats.service";
 export class ChatsListeComponent {
   constructor(private chatsService: ChatsService) {}
 
-  @ViewChild("wizardlg") wizardLarge: ClrWizard;
+  @ViewChild("wizardCatCreation") wizardCatCreation: ClrWizard;
 
   chats: Chat[];
-  lgOpen: boolean = false;
+  isWizardOpen: boolean = false;
+  isKnown: string = "";
 
   ngOnInit() {
     this.getCats();
   }
 
+  setKnownCat(isKnown: string) {
+    this.isKnown = isKnown;
+  }
+
   showCreateWizard() {
-    this.lgOpen = true;
+    this.isWizardOpen = true;
   }
 
   getCats() {

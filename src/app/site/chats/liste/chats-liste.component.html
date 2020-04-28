@@ -35,7 +35,11 @@
   </clr-dg-detail>
 </clr-datagrid>
 
-<clr-wizard #wizardlg [(clrWizardOpen)]="lgOpen" clrWizardSize="lg">
+<clr-wizard
+  #wizardCatCreation
+  [(clrWizardOpen)]="isWizardOpen"
+  clrWizardSize="lg"
+>
   <clr-wizard-title>Ajouter un chat</clr-wizard-title>
 
   <clr-wizard-button [type]="'cancel'">Annuler</clr-wizard-button>
@@ -43,40 +47,68 @@
   <clr-wizard-button [type]="'next'">Suivant</clr-wizard-button>
   <clr-wizard-button [type]="'finish'">Terminer</clr-wizard-button>
 
-  <clr-wizard-page>
+  <clr-wizard-page [clrWizardPageNextDisabled]="!formPageOne.form.valid">
     <ng-template clrPageTitle>Choisissez une catégorie</ng-template>
-    <div class="clr-row">
-      <div class="clr-col-lg-12 clr-col-12">
-        <div class="card clickable">
-          <div class="card-block">
-            <div class="card-title">
-              <clr-icon shape="abyssinian" size="24"></clr-icon> Chat des rues !
+    <form clrForm #formPageOne="ngForm">
+      <div class="clr-row clr-align-items-center">
+        <div class="clr-col-1">
+          <input
+            id="notKnown"
+            name="knownCat"
+            #notKnown="ngModel"
+            [(ngModel)]="isKnown"
+            type="radio"
+            clrRadio
+            value="no"
+            required
+          />
+        </div>
+        <div class="clr-col-11">
+          <div class="card clickable" (click)="setKnownCat('no')">
+            <div class="card-block">
+              <div class="card-title">
+                <clr-icon shape="cornish-rex-body" size="24"></clr-icon> Chat
+                des rues !
+              </div>
+              <p class="card-text">
+                Vous voulez ajouter un chat qu'il faut capturer, ou stériliser.
+                Cliquez sur cette section si le chat n'est pas encore au local
+                ou en famille d'accueil.
+              </p>
             </div>
-            <p class="card-text">
-              Vous voulez ajouter un chat qu'il faut capturer, ou stériliser.
-              Cliquez sur cette section si le chat n'est pas encore au local ou
-              en famille d'accueil.
-            </p>
           </div>
         </div>
       </div>
-    </div>
-    <div class="clr-row">
-      <div class="clr-col-lg-12 clr-col-12">
-        <div class="card clickable">
-          <div class="card-block">
-            <div class="card-title">
-              Chat connu !
+      <div class="clr-row clr-align-items-center">
+        <div class="clr-col-1">
+          <input
+            id="known"
+            name="knownCat"
+            #known="ngModel"
+            [(ngModel)]="isKnown"
+            type="radio"
+            clrRadio
+            value="yes"
+            required
+          />
+        </div>
+        <div class="clr-col-11">
+          <div class="card clickable" (click)="setKnownCat('yes')">
+            <div class="card-block">
+              <div class="card-title">
+                <clr-icon shape="abyssinian-body" size="24"></clr-icon> Chat
+                connu !
+              </div>
+              <p class="card-text">
+                L'identité et la localisation du chat sont bien connus. Cliquez
+                sur cette section si le chat est déjà au local ou en famille
+                d'accueil.
+              </p>
             </div>
-            <p class="card-text">
-              L'identité et la localisation du chat sont bien connus. Cliquez
-              sur cette section si le chat est déjà au local ou en famille
-              d'accueil.
-            </p>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </clr-wizard-page>
 
   <clr-wizard-page #identityPage>

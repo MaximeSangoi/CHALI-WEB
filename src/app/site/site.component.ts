@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import abyssinian from "../shared/icons/cat-icons";
 
 @Component({
   selector: "site",

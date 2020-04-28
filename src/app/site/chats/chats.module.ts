@@ -6,6 +6,7 @@ import { CommonModule } from "@angular/common";
 import { ChatsListeComponent } from "./liste/chats-liste.component";
 import { ChatsDetailComponent } from "./detail/chats-detail.component";
 import { ChatsComponent } from "./chats.component";
+import { FormsModule } from "@angular/forms";
 
 const chatRoute: Routes = [
   {
@@ -20,6 +21,11 @@ const chatRoute: Routes = [
 
 @NgModule({
   declarations: [ChatsComponent, ChatsListeComponent, ChatsDetailComponent],
-  imports: [RouterModule.forChild(chatRoute), ClarityModule, CommonModule],
+  imports: [
+    RouterModule.forChild(chatRoute),
+    ClarityModule,
+    CommonModule,
+    FormsModule,
+  ],
 })
 export class ChatsModule {}
