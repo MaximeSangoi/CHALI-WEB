@@ -28,7 +28,14 @@
               "node_modules/@clr/icons/clr-icons.min.js",
               "src/app/shared/icons/cat-head-icons.js",
               "src/app/shared/icons/cat-body-icons.js"
-            ]
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -48,7 +55,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
