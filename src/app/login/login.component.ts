@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { UntypedFormBuilder } from "@angular/forms";
 import { Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ClrLoadingState } from "@clr/angular";
@@ -13,7 +13,7 @@ import { LoginService } from "./login.service";
 })
 export class LoginComponent {
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private loginService: LoginService,
     private router: Router
   ) {}
