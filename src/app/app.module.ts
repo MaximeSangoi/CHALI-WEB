@@ -9,6 +9,11 @@ import { AppComponent } from "./app.component";
 import { NotFoundComponent } from "./shared/components/not-found.component";
 import { AuthInterceptor } from "./shared/interceptors/auth.interceptor";
 
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr, 'fr-FR');
+
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
   imports: [
@@ -23,4 +28,4 @@ import { AuthInterceptor } from "./shared/interceptors/auth.interceptor";
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

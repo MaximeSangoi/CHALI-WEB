@@ -9,20 +9,38 @@ import { ChatsService } from "../chats.service";
   styleUrls: ["./chats-liste.component.css"],
 })
 export class ChatsListeComponent {
-  constructor(private chatsService: ChatsService) {}
+  constructor(private chatsService: ChatsService) { }
 
   @ViewChild("wizardCatCreation") wizardCatCreation: ClrWizard;
 
   chats: Chat[];
   isWizardOpen: boolean = false;
-  isKnown: string = "";
+  today = new Date();
+  todayFormatted = `${this.today.getDate()}-${this.today.getMonth() + 1}-${this.today.getFullYear()}`;
+  newCat = {
+    status: "",
+    name: "",
+    knownBirthdate: false,
+    birthdate: this.todayFormatted,
+    approximateAge: [],
+    coat: [],
+    isTatooed: false,
+    tatoo: "",
+    microchip: false,
+    fiv: "",
+    sterilized: false
+  }
 
   ngOnInit() {
     this.getCats();
   }
 
-  setKnownCat(isKnown: string) {
-    this.isKnown = isKnown;
+  setStatusCat(status: string) {
+    this.newCat.status = status.toUpperCase();
+  }
+
+  setStatusCat(status: string) {
+    this.newCat.status = status.toUpperCase();
   }
 
   showCreateWizard() {

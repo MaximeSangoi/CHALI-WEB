@@ -1,8 +1,4 @@
-<button
-  type="button"
-  class="btn btn-icon btn-primary"
-  (click)="showCreateWizard()"
->
+<button type="button" class="btn btn-icon btn-primary" (click)="showCreateWizard()">
   <clr-icon shape="plus"></clr-icon> Ajouter un chat
 </button>
 <clr-datagrid class="table">
@@ -13,20 +9,16 @@
   <clr-dg-column>Stérilisation</clr-dg-column>
 
   <clr-dg-row *ngFor="let chat of chats">
-    <clr-dg-cell>{{ chat.nom }}</clr-dg-cell>
-    <clr-dg-cell>{{ chat.couleurPoil }}</clr-dg-cell>
+    <clr-dg-cell>{{ chat.name }}</clr-dg-cell>
+    <clr-dg-cell>{{ chat.coat }}</clr-dg-cell>
     <clr-dg-cell>
-      <clr-icon *ngIf="chat.puce" shape="check" class="is-success"></clr-icon>
-      <clr-icon *ngIf="!chat.puce" shape="times"></clr-icon>
+      <clr-icon *ngIf="chat.microchip" shape="check" class="is-success"></clr-icon>
+      <clr-icon *ngIf="!chat.microchip" shape="times"></clr-icon>
     </clr-dg-cell>
-    <clr-dg-cell>{{ chat.tatouage === "" ? "-" : chat.tatouage }}</clr-dg-cell>
+    <clr-dg-cell>{{ chat.isTatooed ? chat.tatoo : "-" }}</clr-dg-cell>
     <clr-dg-cell>
-      <clr-icon
-        *ngIf="chat.sterilise"
-        shape="check"
-        class="is-success"
-      ></clr-icon>
-      <clr-icon *ngIf="!chat.sterilise" shape="times"></clr-icon>
+      <clr-icon *ngIf="chat.sterilized" shape="check" class="is-success"></clr-icon>
+      <clr-icon *ngIf="!chat.sterilized" shape="times"></clr-icon>
     </clr-dg-cell>
   </clr-dg-row>
 
@@ -35,11 +27,7 @@
   </clr-dg-detail>
 </clr-datagrid>
 
-<clr-wizard
-  #wizardCatCreation
-  [(clrWizardOpen)]="isWizardOpen"
-  clrWizardSize="lg"
->
+<clr-wizard #wizardCatCreation [(clrWizardOpen)]="isWizardOpen" clrWizardSize="lg">
   <clr-wizard-title>Ajouter un chat</clr-wizard-title>
 
   <clr-wizard-button [type]="'cancel'">Annuler</clr-wizard-button>
@@ -47,24 +35,16 @@
   <clr-wizard-button [type]="'next'">Suivant</clr-wizard-button>
   <clr-wizard-button [type]="'finish'">Terminer</clr-wizard-button>
 
-  <clr-wizard-page [clrWizardPageNextDisabled]="!formPageOne.form.valid">
+  <clr-wizard-page [clrWizardPageNextDisabled]="!initForm.form.valid">
     <ng-template clrPageTitle>Choisissez une catégorie</ng-template>
-    <form clrForm #formPageOne="ngForm">
+    <form clrForm #initForm="ngForm">
       <div class="clr-row clr-align-items-center">
         <div class="clr-col-1">
-          <input
-            id="notKnown"
-            name="knownCat"
-            #notKnown="ngModel"
-            [(ngModel)]="isKnown"
-            type="radio"
-            clrRadio
-            value="no"
-            required
-          />
+          <input id="notKnown" name="knownCat" #notKnown="ngModel" [(ngModel)]="newCat.status" type="radio" clrRadio
+            value="STREET" required />
         </div>
         <div class="clr-col-11">
-          <div class="card clickable" (click)="setKnownCat('no')">
+          <div class="card clickable" (click)="setStatusCat('STREET')">
             <div class="card-block">
               <div class="card-title">
                 <clr-icon shape="cornish-rex-body" size="24"></clr-icon> Chat
@@ -81,19 +61,11 @@
       </div>
       <div class="clr-row clr-align-items-center">
         <div class="clr-col-1">
-          <input
-            id="known"
-            name="knownCat"
-            #known="ngModel"
-            [(ngModel)]="isKnown"
-            type="radio"
-            clrRadio
-            value="yes"
-            required
-          />
+          <input id="known" name="knownCat" #known="ngModel" [(ngModel)]="newCat.status" type="radio" clrRadio
+            value="LOCAL" required />
         </div>
         <div class="clr-col-11">
-          <div class="card clickable" (click)="setKnownCat('yes')">
+          <div class="card clickable" (click)="setStatusCat('LOCAL')">
             <div class="card-block">
               <div class="card-title">
                 <clr-icon shape="abyssinian-body" size="24"></clr-icon> Chat
@@ -111,9 +83,72 @@
     </form>
   </clr-wizard-page>
 
-  <clr-wizard-page #identityPage>
+  <clr-wizard-page [clrWizardPageNextDisabled]="!identityForm.form.valid">
     <ng-template clrPageTitle>Identité</ng-template>
-    Hello identité
+    <form clrForm #identityForm="ngForm" clrLayout="horizontal" [clrLabelSize]="4">
+      <clr-input-container>
+        <label>Nom</label>
+        <input clrInput type="text" #name="ngModel" [(ngModel)]="newCat.name" name="name" />
+        <clr-control-error>Ce champ est requis</clr-control-error>
+      </clr-input-container>
+      <clr-checkbox-container>
+        <label>Age connu ?</label>
+        <clr-checkbox-wrapper>
+          <input type="checkbox" clrCheckbox value="true" name="knownBirthdate" [(ngModel)]="newCat.knownBirthdate" />
+        </clr-checkbox-wrapper>
+      </clr-checkbox-container>
+      <clr-date-container *ngIf="newCat.knownBirthdate">
+        <label>Date de naissance</label>
+        <input type="date" clrDate name="birthdate" [(ngModel)]="newCat.birthdate">
+      </clr-date-container>
+      <clr-checkbox-container clrInline *ngIf="!newCat.knownBirthdate">
+        <label>Estimation âge</label>
+        <clr-checkbox-wrapper>
+          <input type="checkbox" clrCheckbox value="0-1" name="isTatooed" checked="" (ngModelChange)="set" />
+          <label>Châton</label>
+        </clr-checkbox-wrapper>
+        <clr-checkbox-wrapper>
+          <input type="checkbox" clrCheckbox value="1-8" name="isTatooed"
+            (ngModelChange)="newCat.approximateAge.push($event.value)" />
+          <label>1-8 ans</label>
+        </clr-checkbox-wrapper>
+        <clr-checkbox-wrapper>
+          <input type="checkbox" clrCheckbox value="8+" name="isTatooed"
+            (ngModelChange)="newCat.approximateAge.push($event.value)" />
+          <label>+8 ans</label>
+        </clr-checkbox-wrapper>
+      </clr-checkbox-container>
+      <clr-checkbox-container>
+        <label>Tatoué ?</label>
+        <clr-checkbox-wrapper>
+          <input type="checkbox" clrCheckbox value="true" name="isTatooed" [(ngModel)]="newCat.isTatooed" />
+        </clr-checkbox-wrapper>
+      </clr-checkbox-container>
+      <clr-input-container *ngIf="newCat.isTatooed">
+        <label>Tatouage</label>
+        <input clrInput type="text" #tatoo="ngModel" [(ngModel)]="newCat.tatoo"
+          (ngModelChange)="newCat.tatoo = $event.toUpperCase()" name="tatoo" />
+        <clr-control-error>Ce champ est requis</clr-control-error>
+      </clr-input-container>
+      <clr-checkbox-container>
+        <label>Pucé ?</label>
+        <clr-checkbox-wrapper>
+          <input type="checkbox" clrCheckbox value="true" name="microchip" [(ngModel)]="newCat.microchip" />
+        </clr-checkbox-wrapper>
+      </clr-checkbox-container>
+      <clr-checkbox-container>
+        <label>FIV ?</label>
+        <clr-checkbox-wrapper>
+          <input type="checkbox" clrCheckbox value="true" name="fiv" [(ngModel)]="newCat.fiv" />
+        </clr-checkbox-wrapper>
+      </clr-checkbox-container>
+      <clr-checkbox-container>
+        <label>Stérilisé ?</label>
+        <clr-checkbox-wrapper>
+          <input type="checkbox" clrCheckbox value="true" name="sterilized" [(ngModel)]="newCat.sterilized" />
+        </clr-checkbox-wrapper>
+      </clr-checkbox-container>
+    </form>
   </clr-wizard-page>
 
   <clr-wizard-page>

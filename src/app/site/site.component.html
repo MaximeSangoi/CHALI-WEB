@@ -3,7 +3,10 @@
   <header class="header header-5">
     <div class="branding">
       <a class="nav-link nav-text" routerLink="/">
-        <span class="title">Le Chat Libre Toulouse</span>
+        <span class="title">
+          Le Chat Libre Toulouse
+          <clr-icon shape="bengal-body" style="width: 36px; height: 36px; margin-left: 10px"></clr-icon>
+        </span>
       </a>
     </div>
     <!-- <div class="header-nav">
@@ -12,11 +15,7 @@
     <div class="search">
       <form class="search">
         <label for="search_input">
-          <input
-            id="search_input"
-            placeholder="Rechercher un chat..."
-            type="text"
-          />
+          <input id="search_input" placeholder="Rechercher un chat..." type="text" />
         </label>
       </form>
     </div>
@@ -26,75 +25,33 @@
       </a>
     </div>
   </header>
-  <!-- <nav class="subnav">
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="home" routerLinkActive="active">Accueil</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="chats" routerLinkActive="active">Chats à adopter</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Prochaines expositions</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Des nouvelles des adoptés !</a>
-            </li>
-        </ul>
-    </nav> -->
   <div class="content-container">
-    <clr-vertical-nav
-      [clrVerticalNavCollapsible]="true"
-      class="nav-trigger--bottom"
-    >
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" class="nav-trigger--bottom">
       <a clrVerticalNavLink routerLinkActive="active" routerLink="./home">
-        <clr-icon shape="certificate" clrVerticalNavIcon></clr-icon>
+        <clr-icon shape="calendar" clrVerticalNavIcon></clr-icon>
         News
       </a>
-      <clr-vertical-nav-group routerLinkActive="active">
-        <a routerLink="./chats" hidden aria-hidden="true"></a>
-        <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
-        Chats
-        <clr-vertical-nav-group-children *clrIfExpanded>
-          <a
-            clrVerticalNavLink
-            routerLink="./fire/charmander"
-            routerLinkActive="active"
-            >Charmander</a
-          >
-          <a
-            clrVerticalNavLink
-            routerLink="./fire/charizard"
-            routerLinkActive="active"
-            >Charizard</a
-          >
-        </clr-vertical-nav-group-children>
-      </clr-vertical-nav-group>
       <clr-vertical-nav-group routerLinkActive="active">
         <a routerLink="./electric" hidden aria-hidden="true"></a>
         <clr-icon shape="bolt" clrVerticalNavIcon></clr-icon>
         Evénements
         <clr-vertical-nav-group-children *clrIfExpanded>
-          <a
-            clrVerticalNavLink
-            routerLink="./electric/pikachu"
-            routerLinkActive="active"
-            >Pikachu</a
-          >
-          <a
-            clrVerticalNavLink
-            routerLink="./electric/raichu"
-            routerLinkActive="active"
-            >Raichu</a
-          >
+          <a clrVerticalNavLink routerLink="./home" routerLinkActive="active">A venir</a>
+          <a clrVerticalNavLink routerLink="./home" routerLinkActive="active">Passé</a>
         </clr-vertical-nav-group-children>
       </clr-vertical-nav-group>
-      <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
-        <clr-icon shape="certificate" clrVerticalNavIcon></clr-icon>
+      <div class="nav-divider"></div>
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./chats">
+        <clr-icon shape="british-shorthair-head" clrVerticalNavIcon></clr-icon>
+        Chats
+      </a>
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./home">
+        <clr-icon shape="employee-group" clrVerticalNavIcon></clr-icon>
         Familles d'accueil
       </a>
-      <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
-        <clr-icon shape="certificate" clrVerticalNavIcon></clr-icon>
+      <div class="nav-divider"></div>
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./home">
+        <clr-icon shape="hashtag" clrVerticalNavIcon></clr-icon>
         Social
       </a>
     </clr-vertical-nav>
