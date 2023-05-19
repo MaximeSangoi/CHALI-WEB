@@ -1,9 +1,5 @@
-<button
-  type="button"
-  class="btn btn-icon btn-primary"
-  (click)="showCreateWizard()"
->
-  <clr-icon shape="plus"></clr-icon> Ajouter un chat
+<button type="button" class="btn btn-icon btn-primary" (click)="showCreateWizard()">
+  <cds-icon shape="plus"></cds-icon> Ajouter un chat
 </button>
 <clr-datagrid class="table">
   <clr-dg-column>Nom</clr-dg-column>
@@ -16,17 +12,13 @@
     <clr-dg-cell>{{ chat.nom }}</clr-dg-cell>
     <clr-dg-cell>{{ chat.couleurPoil }}</clr-dg-cell>
     <clr-dg-cell>
-      <clr-icon *ngIf="chat.puce" shape="check" class="is-success"></clr-icon>
-      <clr-icon *ngIf="!chat.puce" shape="times"></clr-icon>
+      <cds-icon *ngIf="chat.puce" shape="check" class="is-success"></cds-icon>
+      <cds-icon *ngIf="!chat.puce" shape="times"></cds-icon>
     </clr-dg-cell>
     <clr-dg-cell>{{ chat.tatouage === "" ? "-" : chat.tatouage }}</clr-dg-cell>
     <clr-dg-cell>
-      <clr-icon
-        *ngIf="chat.sterilise"
-        shape="check"
-        class="is-success"
-      ></clr-icon>
-      <clr-icon *ngIf="!chat.sterilise" shape="times"></clr-icon>
+      <cds-icon *ngIf="chat.sterilise" shape="check" class="is-success"></cds-icon>
+      <cds-icon *ngIf="!chat.sterilise" shape="times"></cds-icon>
     </clr-dg-cell>
   </clr-dg-row>
 
@@ -35,11 +27,7 @@
   </clr-dg-detail>
 </clr-datagrid>
 
-<clr-wizard
-  #wizardCatCreation
-  [(clrWizardOpen)]="isWizardOpen"
-  clrWizardSize="lg"
->
+<clr-wizard #wizardCatCreation [(clrWizardOpen)]="isWizardOpen" clrWizardSize="lg">
   <clr-wizard-title>Ajouter un chat</clr-wizard-title>
 
   <clr-wizard-button [type]="'cancel'">Annuler</clr-wizard-button>
@@ -52,22 +40,14 @@
     <form clrForm #formPageOne="ngForm">
       <div class="clr-row clr-align-items-center">
         <div class="clr-col-1">
-          <input
-            id="notKnown"
-            name="knownCat"
-            #notKnown="ngModel"
-            [(ngModel)]="isKnown"
-            type="radio"
-            clrRadio
-            value="no"
-            required
-          />
+          <input id="notKnown" name="knownCat" #notKnown="ngModel" [(ngModel)]="isKnown" type="radio" clrRadio
+            value="no" required />
         </div>
         <div class="clr-col-11">
           <div class="card clickable" (click)="setKnownCat('no')">
             <div class="card-block">
               <div class="card-title">
-                <clr-icon shape="cornish-rex-body" size="24"></clr-icon> Chat
+                <cds-icon shape="cornish-rex-body" size="24"></cds-icon> Chat
                 des rues !
               </div>
               <p class="card-text">
@@ -81,22 +61,14 @@
       </div>
       <div class="clr-row clr-align-items-center">
         <div class="clr-col-1">
-          <input
-            id="known"
-            name="knownCat"
-            #known="ngModel"
-            [(ngModel)]="isKnown"
-            type="radio"
-            clrRadio
-            value="yes"
-            required
-          />
+          <input id="known" name="knownCat" #known="ngModel" [(ngModel)]="isKnown" type="radio" clrRadio value="yes"
+            required />
         </div>
         <div class="clr-col-11">
           <div class="card clickable" (click)="setKnownCat('yes')">
             <div class="card-block">
               <div class="card-title">
-                <clr-icon shape="abyssinian-body" size="24"></clr-icon> Chat
+                <cds-icon shape="abyssinian-body" size="24"></cds-icon> Chat
                 connu !
               </div>
               <p class="card-text">

@@ -12,17 +12,13 @@
     <div class="search">
       <form class="search">
         <label for="search_input">
-          <input
-            id="search_input"
-            placeholder="Rechercher un chat..."
-            type="text"
-          />
+          <input id="search_input" placeholder="Rechercher un chat..." type="text" />
         </label>
       </form>
     </div>
     <div class="header-actions header-actions--overflow">
       <a routerLink="/login" class="nav-link nav-icon">
-        <clr-icon shape="cog"></clr-icon>
+        <cds-icon shape="cog"></cds-icon>
       </a>
     </div>
   </header>
@@ -43,58 +39,35 @@
         </ul>
     </nav> -->
   <div class="content-container">
-    <clr-vertical-nav
-      [clrVerticalNavCollapsible]="true"
-      class="nav-trigger--bottom"
-    >
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" class="nav-trigger--bottom">
       <a clrVerticalNavLink routerLinkActive="active" routerLink="./home">
-        <clr-icon shape="certificate" clrVerticalNavIcon></clr-icon>
+        <cds-icon shape="certificate" clrVerticalNavIcon></cds-icon>
         News
       </a>
       <clr-vertical-nav-group routerLinkActive="active">
         <a routerLink="./chats" hidden aria-hidden="true"></a>
-        <clr-icon shape="flame" clrVerticalNavIcon></clr-icon>
+        <cds-icon shape="flame" clrVerticalNavIcon></cds-icon>
         Chats
         <clr-vertical-nav-group-children *clrIfExpanded>
-          <a
-            clrVerticalNavLink
-            routerLink="./fire/charmander"
-            routerLinkActive="active"
-            >Charmander</a
-          >
-          <a
-            clrVerticalNavLink
-            routerLink="./fire/charizard"
-            routerLinkActive="active"
-            >Charizard</a
-          >
+          <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">Charmander</a>
+          <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">Charizard</a>
         </clr-vertical-nav-group-children>
       </clr-vertical-nav-group>
       <clr-vertical-nav-group routerLinkActive="active">
         <a routerLink="./electric" hidden aria-hidden="true"></a>
-        <clr-icon shape="bolt" clrVerticalNavIcon></clr-icon>
+        <cds-icon shape="bolt" clrVerticalNavIcon></cds-icon>
         Evénements
         <clr-vertical-nav-group-children *clrIfExpanded>
-          <a
-            clrVerticalNavLink
-            routerLink="./electric/pikachu"
-            routerLinkActive="active"
-            >Pikachu</a
-          >
-          <a
-            clrVerticalNavLink
-            routerLink="./electric/raichu"
-            routerLinkActive="active"
-            >Raichu</a
-          >
+          <a clrVerticalNavLink routerLink="./electric/pikachu" routerLinkActive="active">Pikachu</a>
+          <a clrVerticalNavLink routerLink="./electric/raichu" routerLinkActive="active">Raichu</a>
         </clr-vertical-nav-group-children>
       </clr-vertical-nav-group>
       <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
-        <clr-icon shape="certificate" clrVerticalNavIcon></clr-icon>
+        <cds-icon shape="certificate" clrVerticalNavIcon></cds-icon>
         Familles d'accueil
       </a>
       <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
-        <clr-icon shape="certificate" clrVerticalNavIcon></clr-icon>
+        <cds-icon shape="certificate" clrVerticalNavIcon></cds-icon>
         Social
       </a>
     </clr-vertical-nav>

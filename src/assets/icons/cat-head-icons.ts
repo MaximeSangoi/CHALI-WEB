@@ -1,5 +1,5 @@
-ClarityIcons.add({
-  "abyssinian-head": `
+export default {
+	"abyssinian-head": `
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 487.756 487.756" style="enable-background:new 0 0 487.756 487.756;" xml:space="preserve">
 <g>
@@ -99,7 +99,7 @@ ClarityIcons.add({
 </g>
 </svg>
 `,
-  "american-curl-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	"american-curl-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 470.709 470.709" style="enable-background:new 0 0 470.709 470.709;" xml:space="preserve">
  <g>
  <path d="M366.355,248.317c-9.011,0-17.77-3.718-24.028-10.201c-12.015-12.443-30.841-15.045-45.779-6.332
@@ -202,7 +202,7 @@ ClarityIcons.add({
 <g>
 </g>
 </svg>`,
-  "ashera-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	"ashera-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 459.82 459.82" style="enable-background:new 0 0 459.82 459.82;" xml:space="preserve">
 <g>
  <path d="M264.91,404.461l-8.32-3.072c-8.523-3.148-14.792-10.369-16.94-18.948c3.699-1.994,6.783-5.105,8.681-8.985
@@ -295,7 +295,7 @@ ClarityIcons.add({
 <g>
 </g>
 </svg>`,
-  "bengal-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	"bengal-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 468.585 468.585" style="enable-background:new 0 0 468.585 468.585;" xml:space="preserve">
 <g>
  <path d="M422.376,227.342c14.57-56.108,9.478-212.037,9.254-218.647c-0.082-2.424-1.14-4.713-2.933-6.347s-4.164-2.476-6.591-2.333
@@ -403,7 +403,7 @@ ClarityIcons.add({
 <g>
 </g>
 </svg>`,
-  "british-shorthair-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	"british-shorthair-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 437.356 437.356" style="enable-background:new 0 0 437.356 437.356;" xml:space="preserve">
 <g>
  <path d="M435.853,48.36c3.128-8.044,1.297-16.849-4.778-22.98c-6.075-6.13-14.864-8.04-22.937-4.983L332.66,48.976l-64.353,5.548
@@ -489,7 +489,7 @@ ClarityIcons.add({
 <g>
 </g>
 </svg>`,
-  "cornish-rex-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	"cornish-rex-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 476.401 476.401" style="enable-background:new 0 0 476.401 476.401;" xml:space="preserve">
 <g>
  <path d="M126.226,303.714c0,21.843,17.771,39.614,39.613,39.614c21.844,0,39.614-17.771,39.614-39.614S187.683,264.1,165.84,264.1
@@ -569,7 +569,7 @@ ClarityIcons.add({
 <g>
 </g>
 </svg>`,
-  "devon-rex-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	"devon-rex-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 449.986 449.986" style="enable-background:new 0 0 449.986 449.986;" xml:space="preserve">
 <g>
  <path d="M167.646,213.809l-3.472-2.734c-17.91-14.104-43.85-11.825-59.054,5.188c-4.434,4.961-8.69,9.544-12.65,13.62
@@ -659,7 +659,7 @@ ClarityIcons.add({
 </g>
 </svg>
 `,
-  "egyptian-cat-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	"egyptian-cat-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 484.988 484.988" style="enable-background:new 0 0 484.988 484.988;" xml:space="preserve">
 <g>
  <path d="M282.566,429.669l-31.143-15.129v-10.574c3.56-1.865,6.532-4.825,8.349-8.536c0.427-0.873,1.331-1.437,2.303-1.437
@@ -750,7 +750,7 @@ ClarityIcons.add({
 </g>
 </svg>
 `,
-  "exotic-short-hair-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	"exotic-short-hair-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 474.458 474.458" style="enable-background:new 0 0 474.458 474.458;" xml:space="preserve">
 <g>
  <path d="M467.706,181.773c-7.095-34.813-17.542-61.051-21.104-69.437c4.064-17.894,6.027-37.076,5.47-55.929
@@ -834,7 +834,7 @@ ClarityIcons.add({
 </g>
 </svg>
 `,
-  "grumpy-cat-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	"grumpy-cat-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 484.285 484.285" style="enable-background:new 0 0 484.285 484.285;" xml:space="preserve">
 <g>
  <path d="M397.242,285.832l-21.869-15.035c-8.315-5.717-18.42-8.25-28.442-7.136l-47.756,5.306c-1.352,0.15-2.678,0.393-3.972,0.721
@@ -915,7 +915,7 @@ ClarityIcons.add({
 </g>
 </svg>
 `,
-  "japanese-bobtail-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	"japanese-bobtail-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
  viewBox="0 0 463.226 463.226" style="enable-background:new 0 0 463.226 463.226;" xml:space="preserve">
 <g>
 <path d="M187.471,282.399l1.265,1.495c1.781,2.104,4.319,3.187,6.875,3.187c2.054,0,4.119-0.699,5.809-2.13
@@ -1003,7 +1003,7 @@ ClarityIcons.add({
 </g>
 </svg>
 `,
-  "javanese-cat-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	"javanese-cat-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 486.473 486.473" style="enable-background:new 0 0 486.473 486.473;" xml:space="preserve">
 <g>
  <path d="M473.129,38.266c-12.851-11.879-31.213-14.4-46.775-6.422c-60.11,30.813-113.032,81.982-127.31,96.379
@@ -1075,7 +1075,7 @@ ClarityIcons.add({
 </g>
 </svg>
 `,
-  "kuril-bobtail-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	"kuril-bobtail-head": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 455.905 455.905" style="enable-background:new 0 0 455.905 455.905;" xml:space="preserve">
 <g>
  <path d="M336.814,269.451c-17.03,16.052-47.121,15.562-47.59,15.552c-4.934-0.145-9.096,3.781-9.233,8.746
@@ -1180,5 +1180,5 @@ ClarityIcons.add({
 <g>
 </g>
 </svg>
-`,
-});
+`
+}

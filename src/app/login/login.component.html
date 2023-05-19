@@ -1,43 +1,29 @@
 <div class="login-wrapper">
   <form class="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <label class="title">
+    <section class="title">
       <h3 class="welcome">Bienvenue sur</h3>
       Le Chat Libre de Toulouse
       <h5 class="hint">Connexion à l'administration</h5>
-    </label>
+    </section>
     <div class="login-group">
-      <input
-        class="username"
-        type="text"
-        id="login_username"
-        placeholder="Adresse e-mail"
-        formControlName="username"
-      />
-      <input
-        class="password"
-        type="password"
-        id="login_password"
-        placeholder="Mot de passe"
-        formControlName="password"
-      />
-      <div class="checkbox">
-        <input type="checkbox" id="rememberme" />
-        <label for="rememberme">
-          Se souvenir de moi
-        </label>
-      </div>
-      <div
-        class="error active"
-        *ngIf="(!loginForm.valid && loginForm.dirty) || error"
-      >
+      <clr-input-container>
+        <label class="clr-sr-only">Utilisateur</label>
+        <input type="text" autocomplete="username" id="login_username" name="username" clrInput
+          placeholder="Adresse e-mail" formControlName="username" />
+      </clr-input-container>
+      <clr-password-container>
+        <label class="clr-sr-only">Mot de passe</label>
+        <input type="password" autocomplete="current-password" name="password" clrPassword id="login_password"
+          placeholder="Mot de passe" />
+      </clr-password-container>
+      <clr-checkbox-wrapper>
+        <label>Se souvenir de moi</label>
+        <input type="checkbox" name="rememberMe" clrCheckbox id="rememberme" />
+      </clr-checkbox-wrapper>
+      <div class="error active" *ngIf="(!loginForm.valid && loginForm.dirty) || error">
         Adresse e-mail ou mot de passe invalide
       </div>
-      <button
-        type="submit"
-        class="btn btn-primary"
-        [disabled]="!loginForm.valid"
-        [clrLoading]="loginLoading"
-      >
+      <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid" [clrLoading]="loginLoading">
         Suivant
       </button>
     </div>

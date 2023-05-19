@@ -1,7 +1,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    //"outDir": "./out-tsc/app",
     "outDir": "./dist/out-tsc",
+    "baseUrl": "./app",
+    "module": "es2022",
+    "types": [],
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -15,5 +19,11 @@
       "dom"
     ],
     "useDefineForClassFields": false
-  }
+  },
+  "include": [
+    "./src/",
+  ],
+  "files": [
+    "polyfills.ts"
+  ]
 }

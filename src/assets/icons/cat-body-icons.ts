@@ -1,4 +1,4 @@
-ClarityIcons.add({
+export default {
   "abyssinian-body": `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 469.543 469.543" style="enable-background:new 0 0 469.543 469.543;" xml:space="preserve">
 <path d="M455.813,5.345c-0.99-3.301-4.093-5.498-7.546-5.336c-31.407,1.52-48.157,32.385-48.854,33.699
@@ -913,5 +913,5 @@ ClarityIcons.add({
 <g>
 </g>
 </svg>
-`,
-});
+`
+}
