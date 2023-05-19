@@ -1,15 +1,16 @@
-import { Component, ViewChild } from "@angular/core";
 import { ClrWizard, ClrWizardPage } from "@clr/angular";
+import { Component, ViewChild } from "@angular/core";
 import { Chat } from "../chats.model";
 import { ChatsService } from "../chats.service";
+import { OnInit } from "@angular/core";
 
 @Component({
-  selector: "chats-liste",
+  selector: "app-chats-liste",
   templateUrl: "./chats-liste.component.html",
   styleUrls: ["./chats-liste.component.css"],
 })
-export class ChatsListeComponent {
-  constructor(private chatsService: ChatsService) {}
+export class ChatsListeComponent implements OnInit {
+  constructor(private chatsService: ChatsService) { }
 
   @ViewChild("wizardCatCreation") wizardCatCreation: ClrWizard;
 

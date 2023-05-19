@@ -1,13 +1,12 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-
-import { rootRouterConfig } from "./app.routes";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { AppComponent } from "./app.component";
-import { NotFoundComponent } from "./shared/components/not-found.component";
 import { AuthInterceptor } from "./shared/interceptors/auth.interceptor";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { NotFoundComponent } from "./shared/components/not-found.component";
+import { RouterModule } from "@angular/router";
+import { rootRouterConfig } from "./app.routes";
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
@@ -23,4 +22,4 @@ import { AuthInterceptor } from "./shared/interceptors/auth.interceptor";
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

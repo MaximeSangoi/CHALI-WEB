@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "chats",
+  selector: "app-chats",
   template: "<router-outlet></router-outlet>",
 })
-export class ChatsComponent {}
+export class ChatsComponent { }

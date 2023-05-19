@@ -1,14 +1,12 @@
+import { ClrLoadingState } from "@clr/angular";
 import { Component } from "@angular/core";
+import { LoginService } from "./login.service";
+import { Router } from "@angular/router";
 import { UntypedFormBuilder } from "@angular/forms";
 import { Validators } from "@angular/forms";
-import { Router } from "@angular/router";
-import { ClrLoadingState } from "@clr/angular";
-import { tap } from "rxjs/operators";
-
-import { LoginService } from "./login.service";
 
 @Component({
-  selector: "login",
+  selector: "app-login",
   templateUrl: "./login.component.html",
 })
 export class LoginComponent {
@@ -16,7 +14,7 @@ export class LoginComponent {
     private formBuilder: UntypedFormBuilder,
     private loginService: LoginService,
     private router: Router
-  ) {}
+  ) { }
 
   loginLoading: ClrLoadingState = ClrLoadingState.DEFAULT;
   error: null;

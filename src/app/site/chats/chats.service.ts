@@ -1,12 +1,12 @@
-import { Injectable } from "@angular/core";
 import { Chat } from "./chats.model";
 import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 
 @Injectable({
   providedIn: "root",
 })
 export class ChatsService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   private apiURL: "http://localhost:3000/cats";
 

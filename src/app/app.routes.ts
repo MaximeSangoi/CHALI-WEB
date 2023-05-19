@@ -1,8 +1,7 @@
 
-import { Routes } from "@angular/router";
-
 import { LoginGuard } from "./login/login.guard";
 import { NotFoundComponent } from "./shared/components/not-found.component";
+import { Routes } from "@angular/router";
 
 export const rootRouterConfig: Routes = [
   { path: "site", loadChildren: () => import('./site/site.module').then(m => m.SiteModule), canActivate: [LoginGuard] },

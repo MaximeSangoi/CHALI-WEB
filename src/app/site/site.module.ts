@@ -1,10 +1,9 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
-import { ClarityModule } from "@clr/angular";
-
-import { SiteComponent } from "./site.component";
 import { AccueilComponent } from "./accueil/accueil.component";
+import { ClarityModule } from "@clr/angular";
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { SiteComponent } from "./site.component";
 
 const siteRouterConfig: Routes = [
   {
@@ -27,4 +26,4 @@ const siteRouterConfig: Routes = [
   ],
   providers: [],
 })
-export class SiteModule {}
+export class SiteModule { }
