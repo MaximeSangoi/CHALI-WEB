@@ -1,46 +1,50 @@
 <div class="clr-row">
-    
     <div class="clr-col-7">
         <h2>Quoi de neuf ?</h2>
-        <ul id="demoTabs" class="nav" role="tablist">
-            <li role="presentation" class="nav-item">
-                <button id="tab1" class="btn btn-link nav-link active" aria-controls="panel1"
-                        aria-selected="true" type="button">Weekend dernier</button>
-            </li>
-            <li role="presentation" class="nav-item">
-                <button id="tab2" class="btn btn-link nav-link" aria-controls="panel2"
-                        aria-selected="false" type="button">Weekend à venir</button>
-            </li>
-        </ul>
-        <section id="panel1" role="tabpanel" aria-labelledby="tab1">
-            Truffaut
-        </section>
-        <section id="panel2" role="tabpanel" aria-labelledby="tab2" aria-hidden="true">
-            PJ
-        </section>
+        <clr-accordion>
+            <clr-accordion-panel [(clrAccordionPanelOpen)]="panelOpen">
+                <clr-accordion-title>
+                    <div class="clr-row">
+                        <div class="clr-col-8">
+                            <span>Vendredi 18 Mars 2023 - Truffaut Esquirol</span>
+                        </div>
+                        <div class="clr-col-4">
+                            <span class="label label-info">A venir</span>
+                        </div>
+                    </div>
+                </clr-accordion-title>
+                <clr-accordion-content *clrIfExpanded>
+
+                </clr-accordion-content>
+            </clr-accordion-panel>
+
+            <clr-accordion-panel>
+                <clr-accordion-title>Item 2</clr-accordion-title>
+                <clr-accordion-content *clrIfExpanded>Content 2</clr-accordion-content>
+            </clr-accordion-panel>
+
+            <clr-accordion-panel>
+                <clr-accordion-title>Item 3</clr-accordion-title>
+                <clr-accordion-content *clrIfExpanded>Content 3</clr-accordion-content>
+            </clr-accordion-panel>
+        </clr-accordion>
     </div>
     <div class="clr-col-5">
         <h2>Les nouveaux venus</h2>
         <div class="clr-row">
             <div class="clr-col-6">
                 <div class="card">
-                    <div class="card-header">
-                        Killy
-                    </div>
+                    <div class="card-header">Maslina</div>
                     <div class="card-block">
                         <div class="card-media-block">
-                            <img src="assets/killy2.png" class="card-media-image">
+                            <img src="assets/masli.png" class="card-media-image">
                             <div class="card-media-description">
-                                <span class="card-media-title">
-                                    Noir
-                                </span>
-                                <span class="card-media-text">
-                                    Trouvé par : Wiwi
-                                </span>
+                                <span class="card-media-title">Noir & Blanc</span>
+                                <span class="card-media-text">Trouvé par : Wiwi</span>
                             </div>
                         </div>
                         <div class="card-text">
-                            Trouvé le week-end dernier à Castorama
+                            Vient de Roumanie
                         </div>
                     </div>
                 </div>
@@ -52,13 +56,13 @@
                     </div>
                     <div class="card-block">
                         <div class="card-media-block">
-                            <img src="assets/killy2.png" class="card-media-image">
+                            <img src="assets/wiwi.png" class="card-media-image">
                             <div class="card-media-description">
                                 <span class="card-media-title">
                                     Tabby roux
                                 </span>
                                 <span class="card-media-text">
-                                    Trouvé par : Killy
+                                    Trouvé par : Maslina
                                 </span>
                             </div>
                         </div>

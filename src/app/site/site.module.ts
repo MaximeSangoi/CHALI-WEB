@@ -12,7 +12,7 @@ const siteRouterConfig: Routes = [
     children: [
       { path: "home", component: AccueilComponent },
       { path: "chats", loadChildren: () => import('./chats/chats.module').then(m => m.ChatsModule) },
-      { path: "", redirectTo: "home" },
+      { path: "", redirectTo: "home", pathMatch: "full" },
     ],
   },
 ];

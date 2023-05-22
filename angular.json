@@ -21,8 +21,9 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "node_modules/@clr/ui/clr-ui-dark.min.css",
-              "src/styles.css"
+              "node_modules/@clr/ui/clr-ui.min.css",
+              "src/styles.css",
+              "src/app/site/accueil/accueil.component.css"
             ],
             "scripts": [
               "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",

@@ -2,7 +2,8 @@
   <!-- <div class="alert alert-app-level"></div> -->
   <header class="header header-5">
     <div class="branding">
-      <a class="nav-link nav-text" routerLink="/">
+      <a class="nav-link" routerLink="/">
+        <cds-icon shape="logo-chat-libre" inverse></cds-icon>
         <span class="title">Le Chat Libre Toulouse</span>
       </a>
     </div>
@@ -18,7 +19,7 @@
     </div>
     <div class="header-actions header-actions--overflow">
       <a routerLink="/login" class="nav-link nav-icon">
-        <cds-icon shape="cog"></cds-icon>
+        <cds-icon shape="logout"></cds-icon>
       </a>
     </div>
   </header>
@@ -39,35 +40,29 @@
         </ul>
     </nav> -->
   <div class="content-container">
-    <clr-vertical-nav [clrVerticalNavCollapsible]="true" class="nav-trigger--bottom">
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" class="nav-trigger--bottom"
+      [(clrVerticalNavCollapsed)]="verticalNavCollapsed">
       <a clrVerticalNavLink routerLinkActive="active" routerLink="./home">
-        <cds-icon shape="certificate" clrVerticalNavIcon></cds-icon>
+        <cds-icon shape="bell" clrVerticalNavIcon></cds-icon>
         News
       </a>
-      <clr-vertical-nav-group routerLinkActive="active">
-        <a routerLink="./chats" hidden aria-hidden="true"></a>
-        <cds-icon shape="flame" clrVerticalNavIcon></cds-icon>
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./chats">
+        <cds-icon shape="bengal-body" clrVerticalNavIcon></cds-icon>
         Chats
-        <clr-vertical-nav-group-children *clrIfExpanded>
-          <a clrVerticalNavLink routerLink="./fire/charmander" routerLinkActive="active">Charmander</a>
-          <a clrVerticalNavLink routerLink="./fire/charizard" routerLinkActive="active">Charizard</a>
-        </clr-vertical-nav-group-children>
-      </clr-vertical-nav-group>
-      <clr-vertical-nav-group routerLinkActive="active">
-        <a routerLink="./electric" hidden aria-hidden="true"></a>
-        <cds-icon shape="bolt" clrVerticalNavIcon></cds-icon>
+      </a>
+
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./events">
+        <cds-icon shape="calendar" clrVerticalNavIcon></cds-icon>
         Evénements
-        <clr-vertical-nav-group-children *clrIfExpanded>
-          <a clrVerticalNavLink routerLink="./electric/pikachu" routerLinkActive="active">Pikachu</a>
-          <a clrVerticalNavLink routerLink="./electric/raichu" routerLinkActive="active">Raichu</a>
-        </clr-vertical-nav-group-children>
-      </clr-vertical-nav-group>
-      <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
-        <cds-icon shape="certificate" clrVerticalNavIcon></cds-icon>
+      </a>
+
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./adoption-families">
+        <cds-icon shape="users" clrVerticalNavIcon></cds-icon>
         Familles d'accueil
       </a>
-      <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
-        <cds-icon shape="certificate" clrVerticalNavIcon></cds-icon>
+
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./social">
+        <cds-icon shape="talk-bubbles" clrVerticalNavIcon></cds-icon>
         Social
       </a>
     </clr-vertical-nav>

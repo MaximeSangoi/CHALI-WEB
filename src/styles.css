@@ -2,3 +2,16 @@
 .datagrid-host .datagrid {
     margin-top: 0px;
 }
+
+.nav-text,
+.card-media-description {
+    font-size: 14px;
+}
+
+.clr-accordion {
+    margin-top: 1.2rem;
+}
+
+.clr-accordion-title {
+    width: 100%
+}

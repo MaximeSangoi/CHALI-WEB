@@ -5,4 +5,6 @@ import { Component } from "@angular/core";
   templateUrl: "./site.component.html",
   styleUrls: ["./site.component.css"],
 })
-export class SiteComponent { }
+export class SiteComponent {
+  verticalNavCollapsed: boolean = true;
+}
